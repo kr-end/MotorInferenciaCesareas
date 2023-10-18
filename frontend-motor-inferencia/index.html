@@ -1,74 +1,131 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!--<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
-    <title>Motor de inferencia</title>
-    <link rel="stylesheet" href="src/style.css">
-  </head>
-  <body>
-    <div class="container">
-      <header>Sistema Experto: Cesáreas</header>
-      <form action="">
-        <div class="page">
-          <div class="title">
-            <h3>Reglas</h3>
-          </div>
-          <div class="field">
-            <div class="label">¿Es una cesárea de emergencia o planeada?</div>
-            <select name="select">
-              <option value="value1">De emergencia</option>
-              <option value="value2">Planeada</option>
-            </select>
-          </div>
-          <div class="field">
-            <button>Next</button>
-          </div>
-        </div>
-
-        <div class="page">
-          <div class="title">
-            <h3>Reglas</h3>
-          </div>
-          <div class="field">
-            <div class="label">¿Cuál es el motivo? </div>
-            <select name="select">
-              <option value="value1">Cabeza grade</option>
-              <option value="value2">Cabeza no encajada</option>
-              <option value="value3">Sufrimiento fetal</option>
-              <option value="value4">Placenta desprendida</option>
-            </select>
-          </div>
-          <div class="field">
-            <button>Next</button>
-          </div>
-        </div>
-
-        <div class="page">
-          <div class="title">
-            <h3>Reglas</h3>
-          </div>
-          <div class="field">
-            <div class="label">¿Cuál es el motivo? </div>
-            <select name="select">
-              <option value="value1">Posicion podálica</option>
-              <option value="value2">Gestosis</option>
-              <option value="value3">Diabetes gravídica</option>
-              <option value="value4">Placenta previa-central</option>
-              <option value="value2">Problemas cardiacos</option>
-              <option value="value3">Problemas renales</option>
-              <option value="value4">Infecciones genitales</option>
-            </select>
-          </div>
-          <div class="field">
-            <button>Next</button>
-          </div>
-        </div>
-
-      </form>
-    </div>
-
-  <!-- <script type="module" src="/src/main.ts"></script> -->
-  </body>
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <!--<link rel="icon" type="image/svg+xml" href="/vite.svg" />-->
+      <title>Motor de inferencia</title>
+      <link rel="stylesheet" href="src/style.css">
+      <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>-->
+   </head>
+   <body>
+      <div class="container">
+         <header>Sistema Experto: Cesáreas</header>
+         <div class="progress-bar">
+            <div class="step">
+               <p>
+                  Inicio
+               </p>
+               <div class="bullet">
+                  <span>0</span>
+               </div>
+               <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+               <p>
+                  Pregunta
+               </p>
+               <div class="bullet">
+                  <span>1</span>
+               </div>
+               <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+               <p>
+                  Pregunta
+               </p>
+               <div class="bullet">
+                  <span>2</span>
+               </div>
+               <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+               <p>
+                  Pregunta
+               </p>
+               <div class="bullet">
+                  <span>3</span>
+               </div>
+               <div class="check fas fa-check"></div>
+            </div>
+         </div>
+         <div class="form-outer">
+            <form action="#">
+               <div class="page slide-page">
+                  <div class="title">
+                     Bienvenido
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                       Ingrese su número de documento
+                     </div>
+                     <input type="text">
+                  </div>
+                  <div class="field">
+                     <button class="firstNext next">Siguiente</button>
+                  </div>
+               </div>
+               <div class="page">
+                  <div class="title">
+                     Regla 1
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                      ¿Es una cesárea de emergencia o planeada?
+                     </div>
+                     <select>
+                      <option value="value1">Cesarea de emergencia</option>
+                      <option value="value2">Cesarea planeada</option>
+                    </select>
+                  <div class="field btns">
+                     <button class="next-1 next">Next</button>
+                  </div>
+               </div>
+               <div class="page">
+                  <div class="title">
+                     Regla 2
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                      ¿Cuál es el motivo? 
+                     </div>
+                     <select>
+                        <option value="value1">Cabeza grande</option>
+                        <option value="value2">Cabeza no encajada</option>
+                        <option value="value3">Sufrimiento fetal</option>
+                        <option value="value4">Placenta desprendida</option>
+                     </select>
+        
+                  </div>
+                  <div class="field btns">
+                     <button class="next-2 next">Siguiente</button>
+                  </div>
+               </div>
+               <div class="page">
+                  <div class="title">
+                     Regla 3
+                  </div>-
+                  <div class="field">
+                     <div class="label">
+                      ¿Cuál es el motivo?
+                     </div>
+                     <select>
+                      <option value="value1">Posicion podálica</option>
+                      <option value="value2">Gestosis</option>
+                      <option value="value3">Diabetes gravídica</option>
+                      <option value="value4">Placenta previa-central</option>
+                      <option value="value5">Problemas cardiacos</option>
+                      <option value="value6">Problemas renales</option>
+                      <option value="value7">Infecciones genitales</option>
+                    </select>
+        
+                  <div class="field btns">
+                     <button class="submit">Validar</button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+      <!--<script src="script.js"></script>-->
+   </body>
 </html>
