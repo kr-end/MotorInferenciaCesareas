@@ -1,5 +1,6 @@
 package com.example.api.service;
 
+import com.example.api.persistance.entity.CesareaEntity;
 import com.example.api.service.dto.QuestionRequestDto;
 import com.example.api.service.dto.QuestionResponseDto;
 import com.example.api.service.model.Cesarea;
@@ -79,7 +80,17 @@ public class QuestionService {
 
             // Cesarea final, al crearse se verifica que el motivo sea válido para el tipo de cesarea
             // y se determina el tipo de incisión
-            return new Cesarea(cesarea.getTipo(), cesarea.getMotivo());
+            Cesarea newCesarea = new Cesarea(cesarea.getTipo(), cesarea.getMotivo());
+            CesareaEntity cesareaEntity = new CesareaEntity();
+
+            cesareaEntity.setIdCesarea(question.getPacientId());
+            cesareaEntity.setTipo(newCesarea.getTipo().toString());
+            cesareaEntity.setMotivo(newCesarea.getMotivo().toString());
+            cesareaEntity.setTipoIncision(newCesarea.getTipoIncision().toString());
+
+            if (cesareaService.save(cesareaEntity) == null) return null;
+
+            return newCesarea;
         } catch (Exception e) {
             // bad request and log error
             System.out.println(e.getMessage());

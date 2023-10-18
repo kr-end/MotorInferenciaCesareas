@@ -18,8 +18,4 @@ public class CesareaService {
         return cesareaRepository.save(cesareaEntity);
     }
 
-    public CesareaEntity getById(String id) {
-        return cesareaRepository.findById(id).orElse(null);
-    }
-
 }
