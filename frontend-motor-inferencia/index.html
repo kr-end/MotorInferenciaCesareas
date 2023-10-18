@@ -2,12 +2,73 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <!--<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+    <title>Motor de inferencia</title>
+    <link rel="stylesheet" href="src/style.css">
   </head>
   <body>
-    <h1>Hola Puto</h1>
-    <script type="module" src="/src/main.ts"></script>
+    <div class="container">
+      <header>Sistema Experto: Cesáreas</header>
+      <form action="">
+        <div class="page">
+          <div class="title">
+            <h3>Reglas</h3>
+          </div>
+          <div class="field">
+            <div class="label">¿Es una cesárea de emergencia o planeada?</div>
+            <select name="select">
+              <option value="value1">De emergencia</option>
+              <option value="value2">Planeada</option>
+            </select>
+          </div>
+          <div class="field">
+            <button>Next</button>
+          </div>
+        </div>
+
+        <div class="page">
+          <div class="title">
+            <h3>Reglas</h3>
+          </div>
+          <div class="field">
+            <div class="label">¿Cuál es el motivo? </div>
+            <select name="select">
+              <option value="value1">Cabeza grade</option>
+              <option value="value2">Cabeza no encajada</option>
+              <option value="value3">Sufrimiento fetal</option>
+              <option value="value4">Placenta desprendida</option>
+            </select>
+          </div>
+          <div class="field">
+            <button>Next</button>
+          </div>
+        </div>
+
+        <div class="page">
+          <div class="title">
+            <h3>Reglas</h3>
+          </div>
+          <div class="field">
+            <div class="label">¿Cuál es el motivo? </div>
+            <select name="select">
+              <option value="value1">Posicion podálica</option>
+              <option value="value2">Gestosis</option>
+              <option value="value3">Diabetes gravídica</option>
+              <option value="value4">Placenta previa-central</option>
+              <option value="value2">Problemas cardiacos</option>
+              <option value="value3">Problemas renales</option>
+              <option value="value4">Infecciones genitales</option>
+            </select>
+          </div>
+          <div class="field">
+            <button>Next</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+  <!-- <script type="module" src="/src/main.ts"></script> -->
   </body>
 </html>
