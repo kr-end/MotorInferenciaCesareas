@@ -34,7 +34,7 @@
           <div class="check fas fa-check"></div>
         </div>
         <div class="step">
-          <p>Pregunta</p>
+          <p>Resultados</p>
           <div class="bullet">
             <span>3</span>
           </div>
@@ -59,9 +59,9 @@
             <div class="title">Regla 1</div>
             <div class="field">
               <div class="label">¿Es una cesárea de emergencia o planeada?</div>
-              <select title="select">
-                <option value="value1">Cesarea de emergencia</option>
-                <option value="value2">Cesarea planeada</option>
+              <select id="tipoCesarea" title="select">
+                <option value="Cesarea de Emergencia">Cesarea de emergencia</option>
+                <option value="Cesarea Planeada">Cesarea planeada</option>
               </select>
             </div>
             <div class="field btns">
@@ -72,11 +72,7 @@
             <div class="title">Regla 2</div>
             <div class="field">
               <div class="label">¿Cuál es el motivo?</div>
-              <select title="select">
-                <option value="value1">Cabeza grande</option>
-                <option value="value2">Cabeza no encajada</option>
-                <option value="value3">Sufrimiento fetal</option>
-                <option value="value4">Placenta desprendida</option>
+              <select id="selectMotivo" title="select">
               </select>
             </div>
 
@@ -85,8 +81,8 @@
             </div>
           </div>
           <div class="page">
-            <div class="title">Regla 3</div>
-            <div class="field">
+            <div class="title">Resultados</div>
+            <!-- <div class="field">
               <div class="label">¿Cuál es el motivo?</div>
               <select title="select">
                 <option value="value1">Posicion podálica</option>
@@ -97,7 +93,7 @@
                 <option value="value6">Problemas renales</option>
                 <option value="value7">Infecciones genitales</option>
               </select>
-            </div>
+            </div> -->
             <div class="field btns">
               <button type="button" class="submit">Validar</button>
             </div>
@@ -105,6 +101,7 @@
         </form>
       </div>
     </div>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
     <script type="module" src="src/main.ts"></script>
   </body>
 </html>
