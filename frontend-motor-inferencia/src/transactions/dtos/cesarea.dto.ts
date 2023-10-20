@@ -9,3 +9,10 @@ export interface QuestionResponseDto {
   question: string;
   answers: string[];
 }
+
+export interface CesareaResponseDto {
+  tipo: string;
+  motivo: string;
+  tipoIncision: string;
+  descripcion: string;
+}

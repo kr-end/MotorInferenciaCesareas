@@ -1,4 +1,4 @@
-import { QuestionRequestDto, QuestionResponseDto } from './transactions/dtos/cesarea.dto';
+import { CesareaResponseDto, QuestionRequestDto, QuestionResponseDto } from './transactions/dtos/cesarea.dto';
 import { createQuestion } from './transactions/question.transactions';
 import { addOptionsToSelect } from './utils';
 const slidePage = document.querySelector(".slide-page") as HTMLDivElement;
@@ -62,7 +62,22 @@ nextBtnSec.addEventListener("click", async (event) => {
 });
 
 // TODO: Implementar la lógica para el tercer paso del formulario
-nextBtnThird.addEventListener("click", (event) => handleNextStep(event, 1, 75));
+nextBtnThird.addEventListener("click", async (event) => {
+  // Obtener el valor del select de motivo de cesárea y asignarlo al DTO
+  questionRequestDto.answer = selectMotivo.value;
+  questionRequestDto.id = 2;
+  
+  const response: CesareaResponseDto = await createQuestion(2, questionRequestDto);
+
+  if (response === undefined) {
+    alert("Error al enviar la respuesta");
+    return;
+  }
+
+  addResult(response);  
+  
+  handleNextStep(event, 1, 75)
+});
 
 submitBtn.addEventListener("click", function () {
   bullet[current - 1].classList.add("active");
@@ -85,5 +100,17 @@ function handleNextStep(event: Event, stepIncrement: number, slideIncrement: num
   progressText[current - 1].classList.add("active");
   // Incrementar el paso actual
   current += stepIncrement;
+}
+
+function addResult(response: CesareaResponseDto) {
+  const resultContainer = document.getElementById("results") as HTMLDivElement;
+  // add a strong to each p element
+  resultContainer.innerHTML = `
+    <strong><p>Tipo de cesárea:</strong> ${response.tipo}</p>
+    <strong><p>Motivo de cesárea:</strong> ${response.motivo}</p>
+    <strong><p>Tipo de incisión:</strong> ${response.tipoIncision}</p>
+    <strong><p>Descripción:</strong> ${response.descripcion}</p>
+  `;
+  //resultContainer.appendChild(result);
 }
 

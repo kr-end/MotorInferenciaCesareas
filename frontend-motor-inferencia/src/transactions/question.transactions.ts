@@ -14,7 +14,6 @@ export async function createQuestion(
 
     return response.data as QuestionResponseDto;
   } catch (error) {
-    alert(error);
     return error;
   }
 }

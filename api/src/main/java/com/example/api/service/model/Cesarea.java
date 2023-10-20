@@ -65,6 +65,6 @@ public class Cesarea {
     }
 
     private void setDescripcion() {
-        this.descripcion = "Se recomienda una cesárea " + tipo + "\n" + motivo.getDescripcion() + "\n" + tipoIncision.getDescripcion() + ".";
+        this.descripcion = "Se recomienda una cesárea de" + tipo + "\n" + motivo.getDescripcion() + "\n" + tipoIncision.getDescripcion() + ".";
     }
 }
